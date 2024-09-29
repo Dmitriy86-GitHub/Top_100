@@ -1,0 +1,116 @@
+
+html {
+    width: 154vh; # страница по ширине экрана
+}
+h1 {
+    position: relative;
+    left: 300px;
+
+}
+h2 {
+    margin:2px;
+    padding: 1px 200px 500px 30px;
+    font-family: Bradley Hand, cursive;
+}
+
+h3  {
+    color:red;
+    float: left;
+    font-size:100%;
+}
+h4 {
+    left: 150px;
+    color:grey;
+    position: relative;
+    left: 350px;
+    white-space: pre; #  сохраниние пробелов
+    margin:30px;
+    padding: 10px 200px 10px 200px;
+}
+
+hr {
+    border: 5px solid yellow;
+    width:131%;
+    left: 235px;
+}
+div p {
+    position: relative;
+    left: 300px;
+}
+div img {
+    max-width: 200px;
+    border-radius: 100px;
+    border: 1px solid yellow;
+    float:left;
+    position: relative;
+    left: 300px;
+}
+
+div h2 {
+    position: relative;
+    left: 300px;
+}
+div hr {
+    position:relative;
+    width:1200px; # длина полосы
+    margin-block-start:10px; #отступ от картинки вниз
+    margin: 30px -20px 20px;
+    border: 0;
+    border-top: 1px solid #c9c7c7;
+    border: 0;
+    border-top: 1px solid #c9c7c7;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+	color: #0059b2;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #CC0000;
+	text-decoration: underline;
+}
+
+
+span {
+    color:red;
+    flex-grow: 1;
+    width: 131%;
+    display: flex;
+    justify-content:center;
+
+}
+
+nav {
+    font-size: 1rem;
+    #position: fixed; панель все время сверху !!!
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-image: url('../../top_100_actresses/img/snwflks-82.gif');
+    background-size:200% ;
+    height:100%;
+    width:131%;
+    overflow-x: hidden;
+}
+
+span {
+
+    background-image: url('../../top_100_actresses/img/Aa.gif');
+    background-size: auto ;
+    height:330px;
+}
+nav p {
+    border-radius: 10px;
+    white-space: pre; # сохранение пробелов
+    color:green;
+    float: left;
+    font-size:100%;
+
+}

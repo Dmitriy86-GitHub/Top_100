@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{%block title %} Гороскоп{% endblock %}
+
+{% block content %}
+    <h1>Знаки зодиака</h1>
+    {% for sign in zodiacs %}
+        <ol>
+            <a href="{% url 'sign_zodiac' sign=sign %}">{{sign|title}}</a>
+        </ol>
+    {% endfor %}
+
+{% endblock %}

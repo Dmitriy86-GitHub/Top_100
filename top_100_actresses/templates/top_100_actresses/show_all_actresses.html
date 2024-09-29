@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load year_filter %} # фильтр определяет возраст и добавляет приписку
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'top_100_actresses/css/show_all_actresses.css'%}">
+{% endblock %}
+
+{%block title %} Toп 100  голливудских актрис {% endblock %}
+
+{% block content %}
+{% include 'includes/top_100_actresses/navbar.html' %}
+
+
+
+    <h1>100 самых привлекательных американских актрис современности
+        <br>
+        <br>
+    <i>Они обаятельны, харизматичны и невероятно успешны. Перед вами — сотня самых привлекательных американских
+        актрис из ныне живущих.</i></h1>
+    <hr>
+    <ul>
+        {% for actress in actresses %}
+            <div>
+                <h2>{{ actress.number }}</h2>
+
+                <img src="media/{{ actress.image}}" alt=" {{actress.name}} {{actress.surname}}">
+                <h4><a href=" {% url 'actress' pk=actress.id %}">{{actress.name}} {{actress.surname}}</a>
+                    <br>{{actress.name_rus}} {{actress.surname_rus}}
+                    <br>Дата рождения    {{actress.date_of_birth}} / {{actress.age}} {{actress.age|year}}
+                    <br>Знак зодиака    {{actress.sign_zodiac}}
+                    <br>Место рождения    {{actress.city_of_birth}}
+                </h4>
+                <br>
+                <br>
+                <br>
+                {% if not forloop.last %}<hr>{% endif %}
+            </div>
+        {% endfor %}
+        </ul>
+
+        <hr>
+
+    <footer>
+        <div class="wrapper">
+            <div class="left">
+                {% for online in background_online %}
+                    {% if forloop.first %} <a href=""><p>{{online}}</p></a>
+                    {% else %} <a href="">{{online}}</a><br><br>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="center">
+                {% for online in background_movies %}
+                    {% if forloop.first %} <a href=""><p>{{online}}</p></a>
+                    {% else %} <a href="">{{online}}</a><br><br>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="right">
+                {% for online in background_serials %}
+                    {% if forloop.first %} <a href=""><p>{{online}}</p></a>
+                    {% else %} <a href="">{{online}}</a><br><br>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="right_2">
+                {% for online in background_tvshow %}
+                    {% if forloop.first %} <a href=""><p>{{online}}</p></a>
+                    {% else %} <a href="">{{online}}</a><br><br>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="right_3">
+                {% for online in background_stars %}
+                    {% if forloop.first %} <a href=""><p>{{online}}</p></a>
+                    {% else %} <a href="">{{online}}</a><br><br>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </footer>
+
+{% endblock %}

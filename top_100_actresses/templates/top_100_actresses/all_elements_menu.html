@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Все элементы меню</h1>
+    <ol>
+        {% for k,v in menu.items %}
+            <li>{{v}}</li>
+        {% endfor %}
+    </ol>
+
+{% endblock %}

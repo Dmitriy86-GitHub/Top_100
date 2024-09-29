@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load year_filter %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'top_100_actresses/css/show_one_actress.css'%}">
+{% endblock %}
+
+{%block title %} {{info.name_rus}} {{info.surname_rus}} {% endblock %}
+
+{% block content %}
+    {% include 'includes/top_100_actresses/navbar_one_actress.html' %}
+    <span><br>
+    <br>
+    <br>
+    <br>
+    </span><hr>
+    <div>
+        <h1><br>{{info.name_rus}} {{info.surname_rus}}</h1>
+        <p >{{info.name}} {{info.surname}}</p>
+        <hr>
+        <img src="../media/{{ info.image}}" alt=" {{info.name}} {{info.surname}}">
+        <h4>
+        <br>Дата рождения - {{info.date_of_birth}} / {{info.age}} {{info.age|year}}
+        <br>Знак зодиака - <a href="{% url 'sign_zodiac' sign=info.sign_zodiac%}">{{info.sign_zodiac}}</a>
+        <br>Место рождения - {{info.city_of_birth}}
+        <br>Биография: <br>
+        </h4>
+        <h2>{{info.biography}}</h2>
+        <br>
+        <br>
+        <br>
+
+    </div>
+{% endblock %}
